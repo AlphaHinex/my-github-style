@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
-  "name": "Github Menu Back",
-  "version": "1.1",
-  "author": "Charlie Jade <summer.alex07@gmail.com> (http://summerblue.me)",
-  "description": "Go to my personal page by one click, dont like the new design,so I decided to change it for my beloving GitHub",
+  "name": "My Github Style",
+  "version": "0.1",
+  "author": "Alpha Hinex <AlphaHinex@gmail.com>",
+  "description": "Customize my GitHub style",
   "icons": {
     "16": "img/icon-16.png",
     "48": "img/icon-48.png",
