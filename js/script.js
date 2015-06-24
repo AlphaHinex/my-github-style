@@ -31,7 +31,7 @@
         // 4. Add stars entrance
         $('.header-nav.left').append('<li class="header-nav-item"><a href="/stars" class="js-selected-navigation-item header-nav-link">Stars</a></li>');
 
-        // 5. Add goto top
+        // 5. Could goto top
         $('body').append('<a href="#" title="Goto top" id="goto-top" style="display:none;position:fixed;bottom:40px;right:40px;">Goto top</a>');
         $(window).scroll(function(){
             $(document).scrollTop() > 10 ? $("#goto-top").fadeIn(500) : $("#goto-top").fadeOut(500);
@@ -40,5 +40,18 @@
             e.preventDefault();
             $(document.body).animate({scrollTop: 0},200);
         });
+
+        // 6. One click to network of repository
+        var graphsEle = $('li[aria-label="Graphs"]');
+        var networkEle = $('li[aria-label="Graphs"]').clone();
+        networkEle.attr('aria-label', 'Network');
+        var networkLink = networkEle.find('a').attr('href').replace('graphs', 'network');
+        networkEle.find('a').attr('href', networkLink)
+                          .attr('aria-label', 'Network')
+                          .attr('data-selected-links', 'network ' + networkLink)
+                          .removeClass('selected');
+        networkEle.find('.full-word').html('Network');
+
+        graphsEle.after(networkEle);
     };
 });
