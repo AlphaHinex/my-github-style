@@ -27,5 +27,18 @@
 
         // 3. Add explore entrance
         $('.header-nav.left').prepend('<li class="header-nav-item"><a href="/explore" class="js-selected-navigation-item header-nav-link">Explore</a></li>');
+
+        // 4. Add stars entrance
+        $('.header-nav.left').append('<li class="header-nav-item"><a href="/stars" class="js-selected-navigation-item header-nav-link">Stars</a></li>');
+
+        // 5. Add goto top
+        $('body').append('<a href="#" title="Goto top" id="goto-top" style="display:none;position:fixed;bottom:40px;right:40px;">Goto top</a>');
+        $(window).scroll(function(){
+            $(document).scrollTop() > 10 ? $("#goto-top").fadeIn(500) : $("#goto-top").fadeOut(500);
+        });
+        $("#goto-top").click(function(e){
+            e.preventDefault();
+            $(document.body).animate({scrollTop: 0},200);
+        });
     };
 });
