@@ -7,13 +7,14 @@ Inspired and based on [github-menu-back](https://github.com/summerblue/github-me
 TODO
 ----
 
-* Configurable all styles
-* `Goto top` style
+* `Goto top` style & script
 * `Network` style
+* Instant view settings change
 
 
 License
 -------
 
 Source code is release under [MIT license](http://mit-license.org/).
+
 Read LICENSE file for more information.
