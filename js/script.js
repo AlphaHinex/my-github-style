@@ -50,6 +50,7 @@
                           .attr('aria-label', 'Network')
                           .attr('data-selected-links', 'network ' + networkLink)
                           .removeClass('selected');
+        networkEle.find('.octicon').removeClass('octicon-graph').addClass('octicon-globe');
         networkEle.find('.full-word').html('Network');
 
         graphsEle.after(networkEle);
