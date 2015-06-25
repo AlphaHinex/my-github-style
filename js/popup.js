@@ -1,5 +1,5 @@
 $(function() {
-  $('#explore, #stars, #profile, #network').each(function() {
+  $('#explore, #stars, #profile, #gototop, #network').each(function() {
     var ele = $(this),
         id = this.id;
     ele.click(function() {
