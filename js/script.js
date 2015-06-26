@@ -65,14 +65,16 @@ var couldGotoTop = function() {
 
 var addNetworkLink = function() {
   var graphsEle = $('li[aria-label="Graphs"]');
-  var networkEle = $('li[aria-label="Graphs"]').clone();
-  networkEle.attr('aria-label', 'Network');
-  var networkLink = networkEle.find('a').attr('href').replace('graphs', 'network');
-  networkEle.find('a').attr('href', networkLink)
-            .attr('aria-label', 'Network')
-            .attr('data-selected-links', 'network ' + networkLink)
-            .removeClass('selected');
-  networkEle.find('.octicon').removeClass('octicon-graph').addClass('octicon-globe');
-  networkEle.find('.full-word').html('Network');
-  graphsEle.after(networkEle);
+  if (graphsEle.length) {
+    var networkEle = graphsEle.clone();
+    networkEle.attr('aria-label', 'Network');
+    networkEle.find('a').attr('href', networkEle.find('a').attr('href').replace('graphs', 'network'))
+                        .attr('aria-label', 'Network')
+                        .attr('data-selected-links', 'repo_graphs /AlphaHinex/my-github-style/graphs')
+                        .removeClass('selected');
+    networkEle.find('.octicon').removeClass('octicon-graph').addClass('octicon-globe');
+    networkEle.find('.full-word').html('Network');
+
+    graphsEle.after(networkEle);
+  }
 };

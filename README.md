@@ -7,8 +7,7 @@ Inspired and based on [github-menu-back](https://github.com/summerblue/github-me
 TODO
 ----
 
-* `Goto top` style & script
-* `Network` style
+* hide Gist
 * Instant view settings change
 
 
