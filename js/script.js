@@ -5,39 +5,29 @@
 
   // If user is logged in
   if ($('.header').hasClass('header-logged-in')) {
-    chrome.storage.sync.get('profile', function(val) {
-      if(val && val['profile'] !== 'false') {
-        oldMenuBack();
-      }
-    });
+    var map = {
+      profile: oldMenuBack,
+      explore: addExplore,
+      stars: addStars,
+      gototop: couldGotoTop,
+      network: addNetworkLink
+    };
 
-    chrome.storage.sync.get('explore', function(val) {
-      if(val && val['explore'] !== 'false') {
-        addExplore();
-      }
-    });
-
-    chrome.storage.sync.get('stars', function(val) {
-      if(val && val['stars'] !== 'false') {
-        addStars();
-      }
-    });
-
-    chrome.storage.sync.get('gototop', function(val) {
-      if(val && val['gototop'] !== 'false') {
-        couldGotoTop();
-      }
-    });
-
-    chrome.storage.sync.get('network', function(val) {
-      if(val && val['network'] !== 'false') {
-        addNetworkLink();
-      }
-    });
+    for (var id in map) {
+      makeChange(id, map[id]);
+    }
   };
 });
 
-function oldMenuBack() {
+var makeChange = function(id, callback) {
+  chrome.storage.sync.get(id, function(val) {
+    if (val && val[id] !== 'false') {
+      callback();
+    }
+  });
+};
+
+var oldMenuBack = function() {
   var avatar = $('#user-links li').last().find('img');
 
   // 1. Replace the origin avatar
@@ -56,17 +46,17 @@ function oldMenuBack() {
   new_link += '    </a>';
   new_link += '</li>';
   $('#user-links').prepend(new_link);
-}
+};
 
-function addExplore() {
+var addExplore = function() {
   $('.header-nav.left').prepend('<li class="header-nav-item"><a href="/explore" class="js-selected-navigation-item header-nav-link">Explore</a></li>');
-}
+};
 
-function addStars() {
+var addStars = function() {
   $('.header-nav.left').append('<li class="header-nav-item"><a href="/stars" class="js-selected-navigation-item header-nav-link">Stars</a></li>');
-}
+};
 
-function couldGotoTop() {
+var couldGotoTop = function() {
   $('body').append('<a href="#" title="Goto top" id="goto-top" style="display:none;position:fixed;bottom:40px;right:40px;">Goto top</a>');
   $(window).scroll(function(){
     $(document).scrollTop() > 10 ? $("#goto-top").fadeIn(500) : $("#goto-top").fadeOut(500);
@@ -75,9 +65,9 @@ function couldGotoTop() {
     e.preventDefault();
     $(document.body).animate({scrollTop: 0},200);
   });
-}
+};
 
-function addNetworkLink() {
+var addNetworkLink = function() {
   var graphsEle = $('li[aria-label="Graphs"]');
   var networkEle = $('li[aria-label="Graphs"]').clone();
   networkEle.attr('aria-label', 'Network');
@@ -89,4 +79,4 @@ function addNetworkLink() {
   networkEle.find('.octicon').removeClass('octicon-graph').addClass('octicon-globe');
   networkEle.find('.full-word').html('Network');
   graphsEle.after(networkEle);
-}
+};
