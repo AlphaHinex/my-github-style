@@ -9,7 +9,7 @@ Customize GitHub UI to your style
 ScreenShot
 ----------
 
-
+![screenshot](img/screenshot.png)
 
 
 Features
