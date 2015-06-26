@@ -53,7 +53,7 @@ var addStars = function() {
 };
 
 var couldGotoTop = function() {
-  $('body').append('<a href="#" title="Goto top" id="goto-top" style="display:none;position:fixed;bottom:40px;right:40px;">Goto top</a>');
+  $('body').append('<span title="Goto top" id="goto-top" style="display:none;position:fixed;bottom:80px;right:80px;cursor:pointer;" class="mega-octicon octicon-chevron-up"></span>');
   $(window).scroll(function(){
     $(document).scrollTop() > 10 ? $("#goto-top").fadeIn(500) : $("#goto-top").fadeOut(500);
   });
