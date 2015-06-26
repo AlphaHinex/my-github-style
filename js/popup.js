@@ -1,5 +1,5 @@
 $(function() {
-  $('#explore, #stars, #profile, #gototop, #network').each(function() {
+  $('#explore, #stars, #profile, #gototop, #network, #gist').each(function() {
     var ele = $(this),
         id = this.id;
     ele.click(function() {
@@ -18,6 +18,6 @@ chrome.runtime.onMessage.addListener(
           kvObj = {};
       kvObj[kv[0]] = kv[1];
       chrome.storage.sync.set(kvObj);
-    } 
+    }
   }
 );

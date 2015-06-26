@@ -7,7 +7,6 @@ Inspired and based on [github-menu-back](https://github.com/summerblue/github-me
 TODO
 ----
 
-* hide Gist
 * Instant view settings change
 
 

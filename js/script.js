@@ -6,7 +6,8 @@ $(document).ready(function () {
       explore: addExplore,
       stars: addStars,
       gototop: couldGotoTop,
-      network: addNetworkLink
+      network: addNetworkLink,
+      gist: hideGist
     };
 
     for (var id in map) {
@@ -78,3 +79,7 @@ var addNetworkLink = function() {
     graphsEle.after(networkEle);
   }
 };
+
+var hideGist = function() {
+  $('a[href="https://gist.github.com"]').hide();
+}
