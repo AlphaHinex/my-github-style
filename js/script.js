@@ -1,8 +1,4 @@
- $(document).ready(function () {
-
-  // For styling
-  $('body').attr('id', 'github-menu-back');
-
+$(document).ready(function () {
   // If user is logged in
   if ($('.header').hasClass('header-logged-in')) {
     var map = {

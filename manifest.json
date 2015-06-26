@@ -22,9 +22,6 @@
     "js": [
       "js/jquery.js",
       "js/script.js"
-    ],
-    "css": [
-      "css/style.css"
     ]
   }]
 }
