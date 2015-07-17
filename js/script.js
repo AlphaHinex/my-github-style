@@ -7,7 +7,8 @@ $(document).ready(function () {
       stars: addStars,
       gototop: couldGotoTop,
       network: addNetworkLink,
-      gist: hideGist
+      gist: hideGist,
+      fixheader: fixHeader
     };
 
     for (var id in map) {
@@ -82,4 +83,9 @@ var addNetworkLink = function() {
 
 var hideGist = function() {
   $('a[href="https://gist.github.com"]').hide();
+}
+
+var fixHeader = function() {
+  $('.header').css({'min-width': '100%', 'position': 'fixed', 'z-index': '16'});
+  $('.site').css({'position': 'relative', 'top': '49px'});
 }
