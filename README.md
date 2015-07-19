@@ -6,23 +6,41 @@ Inspired and based on [github-menu-back](https://github.com/summerblue/github-me
 Customize GitHub UI to your style
 
 
-ScreenShot
-----------
-
-![screenshot](img/screenshot.png)
-
-
 Features
 --------
 
-* Explore: Show `Explore` link on top menu
-* Stars: Show `Stars` link on top menu
-* Profile: Old `GitHub Profile` style
-* Goto Top: Could `Goto Top`
-* Network: One step to `Network` link
-* Hide Gist: Hide `Gist` (Thanks for `GFW`...)
+* All features default to `ON`
 
-> All features default to `ON`
+![popup](img/screenshot/popup.png)
+
+* **Explore**: Show `Explore` link on top menu
+
+![explore](img/screenshot/feature-explore.png)
+
+* **Fix Header**: Fix head banner always on top
+
+![fixheader](img/screenshot/feature-fixheader.png)
+
+* **Goto Top**: Could `Goto Top`
+
+![gototop](img/screenshot/feature-gototop.png)
+
+* **Hide Gist**: Hide `Gist` (Thanks for `GFW`...)
+
+![hidegist](img/screenshot/feature-hidegist.png)
+
+* **Network**: One step to `Network` link
+
+![network](img/screenshot/feature-network.png)
+
+* **Profile**: Old `GitHub Profile` style
+
+![profile](img/screenshot/feature-profile.png)
+
+* **Stars**: Show `Stars` link on top menu
+
+![stars](img/screenshot/feature-stars.png)
+
 
 
 How to use
