@@ -55,7 +55,7 @@ var addStars = function() {
 };
 
 var couldGotoTop = function() {
-  $('body').append('<span title="Goto top" id="goto-top" style="display:none;position:fixed;bottom:80px;right:80px;cursor:pointer;" class="mega-octicon octicon-chevron-up"></span>');
+  $('body').append('<span title="Goto top" id="goto-top" style="display:none;position:fixed;bottom:150px;right:25%;cursor:pointer;" class="mega-octicon octicon-chevron-up"></span>');
   $(window).scroll(function(){
     $(document).scrollTop() > 10 ? $("#goto-top").fadeIn(500) : $("#goto-top").fadeOut(500);
   });
@@ -82,7 +82,7 @@ var addNetworkLink = function() {
 };
 
 var hideGist = function() {
-  $('a[href="https://gist.github.com"]').hide();
+  $('a[href="https://gist.github.com/"]').hide();
 }
 
 var fixHeader = function() {
