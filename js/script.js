@@ -55,7 +55,11 @@ var addStars = function() {
 };
 
 var couldGotoTop = function() {
-  $('body').append('<span title="Goto top" id="goto-top" style="display:none;position:fixed;bottom:150px;right:25%;cursor:pointer;" class="mega-octicon octicon-chevron-up"></span>');
+  $('body').append('<span title="Goto top" id="goto-top" style="display:none;position:fixed;bottom:150px;cursor:pointer;" class="mega-octicon octicon-chevron-up"></span>');
+  adjustGotoTopPos();
+  $(window).resize(function() {
+    adjustGotoTopPos();
+  });
   $(window).scroll(function(){
     $(document).scrollTop() > 10 ? $("#goto-top").fadeIn(500) : $("#goto-top").fadeOut(500);
   });
@@ -64,6 +68,13 @@ var couldGotoTop = function() {
     $(document.body).animate({scrollTop: 0},200);
   });
 };
+
+var adjustGotoTopPos = function() {
+  var screenWidth = $(window).width()
+  var containerWidth = 980 + 20 + 50
+  var right = screenWidth > containerWidth ? (screenWidth - containerWidth) / 2 : 40
+  $('#goto-top').css({'right': right + 'px'})
+}
 
 var addNetworkLink = function() {
   var graphsEle = $('li[aria-label="Graphs"]');
