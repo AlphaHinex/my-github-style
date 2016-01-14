@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "My Github Style",
-  "version": "0.2",
+  "version": "0.3",
   "author": "Alpha Hinex <AlphaHinex@gmail.com>",
   "description": "Customize my GitHub style",
   "icons": {
