@@ -8,7 +8,8 @@ $(document).ready(function () {
       gototop: couldGotoTop,
       network: addNetworkLink,
       gist: hideGist,
-      fixheader: fixHeader
+      fixheader: fixHeader,
+      youknow: addYouKnow
     };
 
     for (var id in map) {
@@ -74,7 +75,7 @@ var adjustGotoTopPos = function() {
   var containerWidth = 980 + 20 + 50
   var right = screenWidth > containerWidth ? (screenWidth - containerWidth) / 2 : 40
   $('#goto-top').css({'right': right + 'px'})
-}
+};
 
 var addNetworkLink = function() {
   var graphsEle = $('li[aria-label="Graphs"]');
@@ -94,10 +95,26 @@ var addNetworkLink = function() {
 
 var hideGist = function() {
   $('a[href="https://gist.github.com/"]').hide();
-}
+};
 
 var fixHeader = function() {
   $('.header').css({'min-width': '100%', 'position': 'fixed', 'z-index': '160'});
   $($('body>div')[3]).css({'position': 'relative', 'top': '49px'});
   $('.site-footer').css({'margin-top': '70px'})
-}
+};
+
+var addYouKnow = function() {
+  var starAEles = $('.pagehead-actions li a.social-count:gt(0):lt(2)');
+  for (var i = 0; i < starAEles.length; i++) {
+    var a = starAEles[i];
+    var aCopy = $(a).clone();
+    a.innerHTML = '<span class="counter">' + a.innerHTML + '</span>';
+    a.title = 'All';
+    aCopy.attr('href', aCopy.attr('href') + '/you_know');
+    aCopy.attr('title', 'You know');
+    aCopy.text('');
+    // TODO get actual count
+    aCopy.append('<span class="counter">' + 0 + '</span>');
+    $(a).after(aCopy);
+  }
+};
