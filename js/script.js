@@ -16,8 +16,8 @@ $(document).ready(function () {
       makeChange(id, map[id]);
     }
 
-    // TODO
-    // $('.pagehead-actions li:nth-child(2) form a').bind('change', function() {console.debug('change');});
+    // Bind addYouKnow feature on click of star/unstar button
+    $('button[aria-label*=" this repository"]').bind('click', addYouKnow);
   };
 });
 
@@ -116,9 +116,12 @@ var addYouKnow = function() {
   if ($('.pagehead').hasClass('repohead')) {
     var url = location.href.split('/').slice(0, 5).join('/') + '/stargazers/you_know';
     $.get(url, function(data) {
+      // Delete you_know links first
+      $('a[href*="you_know"]').remove();
       var p = $(data);
       var count = p.find('a[href*="you_know"] .counter').text();
       var starAEles = $('.pagehead-actions li a.social-count:gt(0):lt(2)');
+      // then add new you_know elements
       for (var i = 0; i < starAEles.length; i++) {
         var a = starAEles[i];
         var aCopy = $(a).clone();
