@@ -16,7 +16,8 @@ $(document).ready(function () {
       makeChange(id, map[id]);
     }
 
-    $('.pagehead-actions li:nth-child(2) form a').bind('change', function() {console.debug('change');});
+    // TODO
+    // $('.pagehead-actions li:nth-child(2) form a').bind('change', function() {console.debug('change');});
   };
 });
 
@@ -58,7 +59,13 @@ var addStars = function() {
 };
 
 var couldGotoTop = function() {
-  $('body').append('<span title="Goto top" id="goto-top" style="display:none;position:fixed;bottom:150px;cursor:pointer;" class="mega-octicon octicon-chevron-up"></span>');
+  var ele = ''
+    + '<span title="Goto top" id="goto-top" style="display:none;position:fixed;bottom:100px;cursor:pointer;">'
+    + '  <svg height="28" width="28" viewBox="0 0 16 16" class="octicon">'
+    + '    <path d="M10 9l-1.5 1.5-3.5-3.75L1.5 10.5 0 9l5-5 5 5z" />'
+    + '  </svg>'
+    + '</span>';
+  $('body').append(ele);
   adjustGotoTopPos();
   $(window).resize(function() {
     adjustGotoTopPos();
@@ -75,8 +82,8 @@ var couldGotoTop = function() {
 var adjustGotoTopPos = function() {
   var screenWidth = $(window).width();
   var containerWidth = 980 + 20 + 50;
-  var right = screenWidth > containerWidth ? (screenWidth - containerWidth) / 2 : 40;
-  $('#goto-top').css({'right': right + 'px'});
+  var left = screenWidth > containerWidth ? (screenWidth - containerWidth) / 2 : 40;
+  $('#goto-top').css({'left': left + 'px'});
 };
 
 var addNetworkLink = function() {
