@@ -6,7 +6,7 @@ $(document).ready(function () {
       explore: addExplore,
       stars: addStars,
       gototop: couldGotoTop,
-      network: addNetworkLink,
+      // network: addNetworkLink,
       gist: hideGist,
       fixheader: fixHeader,
       youknow: addYouKnow
@@ -86,21 +86,21 @@ var adjustGotoTopPos = function() {
   $('#goto-top').css({'left': left + 'px'});
 };
 
-var addNetworkLink = function() {
-  var graphsEle = $('li[aria-label="Graphs"]');
-  if (graphsEle.length) {
-    var networkEle = graphsEle.clone();
-    networkEle.attr('aria-label', 'Network');
-    networkEle.find('a').attr('href', networkEle.find('a').attr('href').replace('graphs', 'network'))
-                        .attr('aria-label', 'Network')
-                        .attr('data-selected-links', 'repo_graphs /AlphaHinex/my-github-style/graphs')
-                        .removeClass('selected');
-    networkEle.find('.octicon').removeClass('octicon-graph').addClass('octicon-globe');
-    networkEle.find('.full-word').html('Network');
+// var addNetworkLink = function() {
+//   var graphsEle = $('li[aria-label="Graphs"]');
+//   if (graphsEle.length) {
+//     var networkEle = graphsEle.clone();
+//     networkEle.attr('aria-label', 'Network');
+//     networkEle.find('a').attr('href', networkEle.find('a').attr('href').replace('graphs', 'network'))
+//                         .attr('aria-label', 'Network')
+//                         .attr('data-selected-links', 'repo_graphs /AlphaHinex/my-github-style/graphs')
+//                         .removeClass('selected');
+//     networkEle.find('.octicon').removeClass('octicon-graph').addClass('octicon-globe');
+//     networkEle.find('.full-word').html('Network');
 
-    graphsEle.after(networkEle);
-  }
-};
+//     graphsEle.after(networkEle);
+//   }
+// };
 
 var hideGist = function() {
   $('a[href="https://gist.github.com/"]').hide();
@@ -117,7 +117,7 @@ var addYouKnow = function() {
     var url = location.href.split('/').slice(0, 5).join('/') + '/stargazers/you_know';
     $.get(url, function(data) {
       // Delete you_know links first
-      $('a[href*="you_know"]').remove();
+      $('.uno').remove();
       var p = $(data);
       var count = p.find('a[href*="you_know"] .counter').text();
       var starAEles = $('.pagehead-actions li a.social-count:gt(0):lt(2)');
@@ -128,6 +128,7 @@ var addYouKnow = function() {
         a.title = 'All';
         aCopy.attr('href', url);
         aCopy.attr('title', 'You know');
+        aCopy.addClass('uno');
         aCopy.text('');
         aCopy.append(count);
         $(a).after(aCopy);

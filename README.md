@@ -11,8 +11,6 @@ Features
 
 * All features default to `ON`
 
-![popup](img/screenshot/popup.png)
-
 * **Explore**: Show `Explore` link on top menu
 
 ![explore](img/screenshot/feature-explore.png)
@@ -29,10 +27,6 @@ Features
 
 ![hidegist](img/screenshot/feature-hidegist.png)
 
-* **Network**: One step to `Network` link
-
-![network](img/screenshot/feature-network.png)
-
 * **Profile**: Old `GitHub Profile` style
 
 ![profile](img/screenshot/feature-profile.png)
@@ -40,6 +34,10 @@ Features
 * **Stars**: Show `Stars` link on top menu
 
 ![stars](img/screenshot/feature-stars.png)
+
+* **You know**: Show the count of stargazers who you known beside the all count
+
+![you-know](img/screenshot/feature-uno.png)
 
 
 
