@@ -108,7 +108,7 @@ var hideGist = function() {
 
 var fixHeader = function() {
   $('.header').css({'min-width': '100%', 'position': 'fixed', 'z-index': '160'});
-  $($('body>div')[3]).css({'position': 'relative', 'top': '49px'});
+  $('div[role="main"]').css({'position': 'relative', 'top': '49px'});
   $('.site-footer').css({'margin-top': '70px'})
 };
 
