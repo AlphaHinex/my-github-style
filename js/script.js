@@ -50,30 +50,39 @@ var oldMenuBack = function() {
   $('#user-links').prepend(new_link);
 };
 
+var headerNav = function() {
+    return $('.header-nav.float-left');
+};
+
 var addExplore = function() {
-  $('.header-nav.left').prepend('<li class="header-nav-item"><a href="/explore" class="js-selected-navigation-item header-nav-link">Explore</a></li>');
+  headerNav().prepend('<li class="header-nav-item"><a href="/explore" class="js-selected-navigation-item header-nav-link">Explore</a></li>');
 };
 
 var addStars = function() {
-  $('.header-nav.left').append('<li class="header-nav-item"><a href="/stars" class="js-selected-navigation-item header-nav-link">Stars</a></li>');
+  headerNav().append('<li class="header-nav-item"><a href="/stars" class="js-selected-navigation-item header-nav-link">Stars</a></li>');
+};
+
+var goTopEle = function(id) {
+    var ele = ''
+      + '<span title="Goto top" id="' + id + '" class="goto-top" style="display:none;position:fixed;bottom:100px;cursor:pointer;">'
+      + '  <svg height="28" width="28" viewBox="0 0 16 16" class="octicon">'
+      + '    <path d="M10 9l-1.5 1.5-3.5-3.75L1.5 10.5 0 9l5-5 5 5z" />'
+      + '  </svg>'
+      + '</span>';
+    return ele;
 };
 
 var couldGotoTop = function() {
-  var ele = ''
-    + '<span title="Goto top" id="goto-top" style="display:none;position:fixed;bottom:100px;cursor:pointer;">'
-    + '  <svg height="28" width="28" viewBox="0 0 16 16" class="octicon">'
-    + '    <path d="M10 9l-1.5 1.5-3.5-3.75L1.5 10.5 0 9l5-5 5 5z" />'
-    + '  </svg>'
-    + '</span>';
-  $('body').append(ele);
+  $('body').append(goTopEle('top1'));
+  $('body').append(goTopEle('top2'));
   adjustGotoTopPos();
   $(window).resize(function() {
     adjustGotoTopPos();
   });
   $(window).scroll(function(){
-    $(document).scrollTop() > 10 ? $("#goto-top").fadeIn(500) : $("#goto-top").fadeOut(500);
+    $(document).scrollTop() > 10 ? $(".goto-top").fadeIn(500) : $(".goto-top").fadeOut(500);
   });
-  $("#goto-top").click(function(e){
+  $(".goto-top").click(function(e){
     e.preventDefault();
     $(document.body).animate({scrollTop: 0},200);
   });
@@ -82,8 +91,9 @@ var couldGotoTop = function() {
 var adjustGotoTopPos = function() {
   var screenWidth = $(window).width();
   var containerWidth = 980 + 20 + 50;
-  var left = screenWidth > containerWidth ? (screenWidth - containerWidth) / 2 : 40;
-  $('#goto-top').css({'left': left + 'px'});
+  var margin = screenWidth > containerWidth ? (screenWidth - containerWidth) / 2 : 40;
+  $('#top1').css({'left': margin + 'px'});
+  $('#top2').css({'right': margin + 'px'});
 };
 
 // var addNetworkLink = function() {
@@ -107,9 +117,11 @@ var hideGist = function() {
 };
 
 var fixHeader = function() {
-  $('.header').css({'min-width': '100%', 'position': 'fixed', 'z-index': '160'});
-  $('div[role="main"]').css({'position': 'relative', 'top': '49px'});
-  $('.site-footer').css({'margin-top': '70px'})
+  if (!$('.logged-in').hasClass('page-profile')) {
+    $('.header').css({'min-width': '100%', 'position': 'fixed', 'z-index': '160'});
+    $('div[role="main"]').css({'position': 'relative', 'top': '49px'});
+    $('.site-footer').css({'margin-top': '70px'})
+  }  
 };
 
 var addYouKnow = function() {
