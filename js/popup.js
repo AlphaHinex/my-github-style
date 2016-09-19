@@ -25,13 +25,16 @@ $(function() {
   });
 
   var storeState = function(feat) {
+    console.debug('send message: ' + feat.id + ':' + feat.checked);
     chrome.runtime.sendMessage({settingChanged: feat.id + ':' + feat.checked});
   };
 });
 
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
+    console.debug('received message: ' + request);
     if(request.hasOwnProperty('settingChanged')) {
+      console.debug('on setting changed');
       var kv = request['settingChanged'].split(':'),
           kvObj = {};
       kvObj[kv[0]] = kv[1];
