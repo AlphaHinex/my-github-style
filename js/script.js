@@ -30,7 +30,7 @@ var makeChange = function(id, callback) {
 };
 
 var oldMenuBack = function() {
-  var avatar = $('#user-links li').last().find('img');
+  var avatar = $('#user-links > li:nth-child(3) > details > summary > img');
 
   // 1. Replace the origin avatar
   avatar.replaceWith('<span class="octicon octicon-octoface avatar" style="margin-top: 3px;"></span>');
