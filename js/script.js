@@ -32,10 +32,7 @@ var makeChange = function(id, callback) {
 var oldMenuBack = function() {
   var avatar = $('#user-links > li:nth-child(3) > details > summary > img');
 
-  // 1. Replace the origin avatar
-  avatar.replaceWith('<span class="octicon octicon-octoface avatar" style="margin-top: 3px;"></span>');
-
-  // 2. Insert the old link
+  // Insert the old link
   var avatar_link = avatar.attr('src');
   var current_username = avatar.attr('alt').replace('@', '');
   var new_link = '';
