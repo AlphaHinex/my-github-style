@@ -48,7 +48,7 @@ var oldMenuBack = function() {
 };
 
 var headerNav = function() {
-    return $('.header-nav.float-left');
+    return $('ul[role="navigation"]');
 };
 
 var addExplore = function() {
