@@ -56,7 +56,7 @@ var addExplore = function() {
 };
 
 var addStars = function() {
-  headerNav().append('<li class="header-nav-item"><a href="/stars" class="js-selected-navigation-item header-nav-link">Stars</a></li>');
+  headerNav().append('<li><a href="/stars" class="js-selected-navigation-item HeaderNavlink px-2" data-ga-click="Header, go to starred repos, text:your stars">Stars</a></li>');
 };
 
 var goTopEle = function(id) {
