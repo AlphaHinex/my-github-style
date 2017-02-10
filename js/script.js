@@ -52,7 +52,7 @@ var headerNav = function() {
 };
 
 var addExplore = function() {
-  headerNav().prepend('<li class="header-nav-item"><a href="/explore" class="js-selected-navigation-item header-nav-link">Explore</a></li>');
+  headerNav().append('<li><a href="/explore" class="js-selected-navigation-item HeaderNavlink px-2" data-ga-click="Header, click, Nav menu - item:explore" data-selected-links="/explore /trending /trending/developers /integrations /integrations/feature/code /integrations/feature/collaborate /integrations/feature/ship showcases showcases_search showcases_landing /explore">Explore</a></li>');
 };
 
 var addStars = function() {
