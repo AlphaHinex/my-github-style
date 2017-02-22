@@ -1,6 +1,7 @@
 $(document).ready(function () {
   // If user is logged in
-  if ($('.header').hasClass('header-logged-in')) {
+  if ($('.logged-in')) {
+    console.debug('User logged in.');
     var map = {
       profile: oldMenuBack,
       explore: addExplore,
@@ -18,7 +19,9 @@ $(document).ready(function () {
 
     // Bind addYouKnow feature on click of star/unstar button
     $('button[aria-label*=" this repository"]').bind('click', addYouKnow);
-  };
+  } else {
+    console.debug('User did NOT log in!');
+  }
 });
 
 var makeChange = function(id, callback) {
