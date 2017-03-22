@@ -116,9 +116,8 @@ var hideGist = function() {
 
 var fixHeader = function() {
   if (!$('.logged-in').hasClass('page-profile')) {
-    $('.header').css({'min-width': '100%', 'position': 'fixed', 'z-index': '160'});
-    $('div[role="main"]').css({'position': 'relative', 'top': '49px'});
-    $('.site-footer').css({'margin-top': '70px'})
+    $('.Header').css({'min-width': '100%', 'position': 'fixed', 'z-index': '160'});
+    $('div[role="main"]').css({'position': 'relative', 'top': '54px'});
   }  
 };
 
