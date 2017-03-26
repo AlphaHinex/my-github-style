@@ -6,7 +6,6 @@ $(document).ready(function () {
       explore: addExplore,
       stars: addStars,
       gototop: couldGotoTop,
-      // network: addNetworkLink,
       gist: hideGist,
       fixheader: fixHeader,
       youknow: addYouKnow
@@ -93,22 +92,6 @@ var adjustGotoTopPos = function() {
   $('#top1').css({'left': margin + 'px'});
   $('#top2').css({'right': margin + 'px'});
 };
-
-// var addNetworkLink = function() {
-//   var graphsEle = $('li[aria-label="Graphs"]');
-//   if (graphsEle.length) {
-//     var networkEle = graphsEle.clone();
-//     networkEle.attr('aria-label', 'Network');
-//     networkEle.find('a').attr('href', networkEle.find('a').attr('href').replace('graphs', 'network'))
-//                         .attr('aria-label', 'Network')
-//                         .attr('data-selected-links', 'repo_graphs /AlphaHinex/my-github-style/graphs')
-//                         .removeClass('selected');
-//     networkEle.find('.octicon').removeClass('octicon-graph').addClass('octicon-globe');
-//     networkEle.find('.full-word').html('Network');
-
-//     graphsEle.after(networkEle);
-//   }
-// };
 
 var hideGist = function() {
   $('a[href="https://gist.github.com/"]').hide();
