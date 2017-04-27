@@ -84,7 +84,7 @@ var couldGotoTop = function() {
   });
   $(".goto-top").click(function(e){
     e.preventDefault();
-    $(document.body).animate({scrollTop: 0},200);
+    $("html, body").animate({ scrollTop: 0 }, 200);
   });
 };
 
