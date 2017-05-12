@@ -3,7 +3,7 @@ $(document).ready(function () {
   if ($('.header').hasClass('header-logged-in')) {
     var map = {
       profile: oldMenuBack,
-      explore: addExplore,
+      explore: hideExplore,
       stars: addStars,
       gototop: couldGotoTop,
       // network: addNetworkLink,
@@ -54,8 +54,8 @@ var headerNav = function() {
     return $('.header-nav.float-left');
 };
 
-var addExplore = function() {
-  headerNav().prepend('<li class="header-nav-item"><a href="/explore" class="js-selected-navigation-item header-nav-link">Explore</a></li>');
+var hideExplore = function() {
+  $('a[href="/explore"]').hide();
 };
 
 var addStars = function() {
