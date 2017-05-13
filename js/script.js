@@ -134,7 +134,7 @@ var addYouKnow = function() {
       // Delete you_know links first
       $('.uno').remove();
       var p = $(data);
-      var count = p.find('a[href*="you_know"] .counter').text();
+      var count = p.find('a[href*="you_know"] .Counter').text();
       var starAEles = $('.pagehead-actions li a.social-count:gt(0):lt(2)');
       // then add new you_know elements
       for (var i = 0; i < starAEles.length; i++) {
