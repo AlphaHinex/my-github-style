@@ -7,7 +7,7 @@ $(document).ready(function () {
       stars: addStars,
       gototop: couldGotoTop,
       // network: addNetworkLink,
-      gist: hideGist,
+      market: hideMarket,
       fixheader: fixHeader,
       youknow: addYouKnow
     };
@@ -112,8 +112,8 @@ var adjustGotoTopPos = function() {
 //   }
 // };
 
-var hideGist = function() {
-  $('a[href="https://gist.github.com/"]').hide();
+var hideMarket = function() {
+  $('a[href="/market"]').hide();
 };
 
 var fixHeader = function() {
