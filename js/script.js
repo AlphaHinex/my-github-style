@@ -23,7 +23,7 @@ $(document).ready(function () {
 
 var makeChange = function(id, callback) {
   chrome.storage.sync.get(id, function(val) {
-    if (val && val[id] !== 'false') {
+    if (val && val[id] !== 'undefined' && val[id] !== 'false') {
       callback();
     }
   });
