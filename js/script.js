@@ -33,12 +33,9 @@ var makeChange = function(id, callback) {
 };
 
 var oldMenuBack = function() {
-  var avatar = $('#user-links li').last().find('img');
+  var avatar = $('#user-links > li:nth-child(3) > details > summary > img');
 
-  // 1. Replace the origin avatar
-  avatar.replaceWith('<span class="octicon octicon-octoface avatar" style="margin-top: 3px;"></span>');
-
-  // 2. Insert the old link
+  // Insert the old link
   var avatar_link = avatar.attr('src');
   var current_username = avatar.attr('alt').replace('@', '');
   var new_link = '';
@@ -54,15 +51,15 @@ var oldMenuBack = function() {
 };
 
 var headerNav = function() {
-    return $('.header-nav.float-left');
+    return $('ul[role="navigation"]');
 };
 
 var addExplore = function() {
-  headerNav().prepend('<li class="header-nav-item"><a href="/explore" class="js-selected-navigation-item header-nav-link">Explore</a></li>');
+  headerNav().append('<li><a href="/explore" class="js-selected-navigation-item HeaderNavlink px-2" data-ga-click="Header, click, Nav menu - item:explore" data-selected-links="/explore /trending /trending/developers /integrations /integrations/feature/code /integrations/feature/collaborate /integrations/feature/ship showcases showcases_search showcases_landing /explore">Explore</a></li>');
 };
 
 var addStars = function() {
-  headerNav().append('<li class="header-nav-item"><a href="/stars" class="js-selected-navigation-item header-nav-link">Stars</a></li>');
+  headerNav().append('<li><a href="/stars" class="js-selected-navigation-item HeaderNavlink px-2" data-ga-click="Header, go to starred repos, text:your stars">Stars</a></li>');
 };
 
 var goTopEle = function(id) {
