@@ -1,6 +1,6 @@
 $(function() {
   chrome.storage.sync.get('switch', function(val) {
-    $('#switch').attr('checked', val['switch'] !== 'false');
+    $('#switch').attr('checked', val['switch'] !== 'undefined' && val['switch'] !== 'false');
   });
 
   $('#switch').click(function() {
@@ -20,7 +20,7 @@ $(function() {
       storeState(this);
     });
     chrome.storage.sync.get(this.id, function(val) {
-      ele.attr('checked', val[id] !== 'false');
+      ele.attr('checked', val[id] !== 'undefined' && val[id] !== 'false');
     });
   });
 
