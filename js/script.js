@@ -7,7 +7,6 @@ $(document).ready(function () {
       explore: addExplore,
       stars: addStars,
       gototop: couldGotoTop,
-      // network: addNetworkLink,
       gist: hideGist,
       fixheader: fixHeader,
       youknow: addYouKnow
@@ -40,11 +39,9 @@ var oldMenuBack = function() {
   var current_username = avatar.attr('alt').replace('@', '');
   var new_link = '';
   new_link += '<li class="header-nav-item dropdown js-menu-container">';
-  new_link += '    <a class="header-nav-link name" href="/'+current_username+'" data-ga-click="Header, go to profile, text:username">';
+  new_link += '    <a class="js-selected-navigation-item HeaderNavlink px-2" href="/'+current_username+'" data-ga-click="Header, go to profile, text:username">';
   new_link += '      <img alt="@'+current_username+'" class="avatar" height="20" src="'+avatar_link+'" width="20">';
-  new_link += '      <span class="css-truncate">';
-  new_link += '        <span class="css-truncate-target">'+current_username+'</span>';
-  new_link += '      </span>';
+  new_link += '      <span>'+current_username+'</span>';
   new_link += '    </a>';
   new_link += '</li>';
   $('#user-links').prepend(new_link);
@@ -96,31 +93,14 @@ var adjustGotoTopPos = function() {
   $('#top2').css({'right': margin + 'px'});
 };
 
-// var addNetworkLink = function() {
-//   var graphsEle = $('li[aria-label="Graphs"]');
-//   if (graphsEle.length) {
-//     var networkEle = graphsEle.clone();
-//     networkEle.attr('aria-label', 'Network');
-//     networkEle.find('a').attr('href', networkEle.find('a').attr('href').replace('graphs', 'network'))
-//                         .attr('aria-label', 'Network')
-//                         .attr('data-selected-links', 'repo_graphs /AlphaHinex/my-github-style/graphs')
-//                         .removeClass('selected');
-//     networkEle.find('.octicon').removeClass('octicon-graph').addClass('octicon-globe');
-//     networkEle.find('.full-word').html('Network');
-
-//     graphsEle.after(networkEle);
-//   }
-// };
-
 var hideGist = function() {
   $('a[href="https://gist.github.com/"]').hide();
 };
 
 var fixHeader = function() {
   if (!$('.logged-in').hasClass('page-profile')) {
-    $('.header').css({'min-width': '100%', 'position': 'fixed', 'z-index': '160'});
-    $('div[role="main"]').css({'position': 'relative', 'top': '49px'});
-    $('.site-footer').css({'margin-top': '70px'})
+    $('.Header').css({'min-width': '100%', 'position': 'fixed', 'z-index': '160'});
+    $('div[role="main"]').css({'position': 'relative', 'top': '54px'});
   }  
 };
 
