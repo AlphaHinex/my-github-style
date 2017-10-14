@@ -4,10 +4,10 @@ $(document).ready(function () {
     console.debug('User logged in.');
     var map = {
       profile: oldMenuBack,
-      explore: addExplore,
+      explore: hideExplore,
       stars: addStars,
       gototop: couldGotoTop,
-      gist: hideGist,
+      market: hideMarket,
       fixheader: fixHeader,
       youknow: addYouKnow
     };
@@ -51,8 +51,8 @@ var headerNav = function() {
     return $('ul[role="navigation"]');
 };
 
-var addExplore = function() {
-  headerNav().append('<li><a href="/explore" class="js-selected-navigation-item HeaderNavlink px-2" data-ga-click="Header, click, Nav menu - item:explore" data-selected-links="/explore /trending /trending/developers /integrations /integrations/feature/code /integrations/feature/collaborate /integrations/feature/ship showcases showcases_search showcases_landing /explore">Explore</a></li>');
+var hideExplore = function() {
+  $('a[href="/explore"]').hide();
 };
 
 var addStars = function() {
@@ -81,7 +81,7 @@ var couldGotoTop = function() {
   });
   $(".goto-top").click(function(e){
     e.preventDefault();
-    $(document.body).animate({scrollTop: 0},200);
+    $("html, body").animate({ scrollTop: 0 }, 200);
   });
 };
 
@@ -93,8 +93,8 @@ var adjustGotoTopPos = function() {
   $('#top2').css({'right': margin + 'px'});
 };
 
-var hideGist = function() {
-  $('a[href="https://gist.github.com/"]').hide();
+var hideMarket = function() {
+  $('a[href="/market"]').hide();
 };
 
 var fixHeader = function() {
