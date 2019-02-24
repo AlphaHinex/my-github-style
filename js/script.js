@@ -15,6 +15,7 @@ $(document).ready(function () {
     for (var id in map) {
       makeChange(id, map[id]);
     }
+    hideMarket();
 
     // Bind addYouKnow feature on click of star/unstar button
     $('button[aria-label*=" this repository"]').bind('click', addYouKnow);
@@ -94,7 +95,7 @@ var adjustGotoTopPos = function() {
 };
 
 var hideMarket = function() {
-  $('a[href="/market"]').hide();
+  $('a[href="/marketplace"]').hide();
 };
 
 var fixHeader = function() {
