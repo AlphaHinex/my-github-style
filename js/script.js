@@ -101,7 +101,7 @@ var hideMarket = function() {
 var fixHeader = function() {
   if (!$('.logged-in').hasClass('page-profile')) {
     $('.Header').css({'min-width': '100%', 'position': 'fixed', 'z-index': '160'});
-    $('div[role="main"]').css({'position': 'relative', 'top': '54px'});
+    $('.application-main').css({'position': 'relative', 'top': '60px'});
   }  
 };
 
