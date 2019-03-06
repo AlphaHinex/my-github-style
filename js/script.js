@@ -49,7 +49,7 @@ var oldMenuBack = function() {
 };
 
 var headerNav = function() {
-    return $('ul[role="navigation"]');
+    return $('.HeaderMenu>nav>ul');
 };
 
 var hideExplore = function() {
