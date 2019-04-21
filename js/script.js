@@ -33,19 +33,19 @@ var makeChange = function(id, callback) {
 };
 
 var oldMenuBack = function() {
-  var avatar = $('#user-links > li:nth-child(3) > details > summary > img');
+  var avatar = $('body > div.position-relative.js-header-wrapper > header > div.Header-item.position-relative.mr-0 > details > summary > img');
 
   // Insert the old link
   var avatar_link = avatar.attr('src');
   var current_username = avatar.attr('alt').replace('@', '');
   var new_link = '';
-  new_link += '<li class="header-nav-item dropdown js-menu-container">';
+  new_link += '  <div class="Header-item">';
   new_link += '    <a class="js-selected-navigation-item HeaderNavlink px-2" href="/'+current_username+'" data-ga-click="Header, go to profile, text:username">';
   new_link += '      <img alt="@'+current_username+'" class="avatar" height="20" src="'+avatar_link+'" width="20">';
   new_link += '      <span>'+current_username+'</span>';
   new_link += '    </a>';
-  new_link += '</li>';
-  $('#user-links').prepend(new_link);
+  new_link += '  </div>';
+  $('.Header-item--full').after(new_link);
 };
 
 var headerNav = function() {
