@@ -45,7 +45,7 @@ var oldMenuBack = function() {
   new_link += '      <span>'+current_username+'</span>';
   new_link += '    </a>';
   new_link += '  </div>';
-  $('.Header-item--full').after(new_link);
+  $('.Header-item--full:last').after(new_link);
 };
 
 var headerNav = function() {
