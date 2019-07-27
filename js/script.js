@@ -39,7 +39,7 @@ var oldMenuBack = function() {
   var avatar_link = avatar.attr('src');
   var current_username = avatar.attr('alt').replace('@', '');
   var new_link = '';
-  new_link += '  <div class="Header-item">';
+  new_link += '  <div class="Header-item" style="width:145px;">';
   new_link += '    <a class="js-selected-navigation-item HeaderNavlink px-2" href="/'+current_username+'" data-ga-click="Header, go to profile, text:username">';
   new_link += '      <img alt="@'+current_username+'" class="avatar" height="20" src="'+avatar_link+'" width="20">';
   new_link += '      <span>'+current_username+'</span>';
